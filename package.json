@@ -1,0 +1,9 @@
+{
+  "name": "udemy-vue-home-work",
+  "version": "1.0.0",
+  "description": "Домашняя работа по Vue от Udemy",
+  "repository": "https://github.com/newbornfrontender/udemy-vue-home-work.git",
+  "author": "Infant Frontender <newbornfrontender@gmail.com>",
+  "license": "MIT",
+  "private": true
+}
