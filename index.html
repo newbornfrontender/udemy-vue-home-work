@@ -10,15 +10,16 @@
 
   <body>
     <section id="app">
-      <p>Hello {{ msg }}!</p>
+      <p>{{ title }}</p>
     </section>
 
     <script>
       new Vue({
+        el: '#app',
         data: {
-          msg: 'world',
+          title: 'Hello World!',
         },
-      }).$mount('#app');
+      });
     </script>
   </body>
 </html>
