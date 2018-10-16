@@ -1,0 +1,34 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Vue</title>
+    <script src="https://unpkg.com/vue@latest/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <section id="app">
+      <input
+        type="text"
+        v-on:input="changeTitle"
+      >
+      <p>{{ title }}</p>
+    </section>
+
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          title: 'Hello World!',
+        },
+        methods: {
+          changeTitle: function(event) {
+            this.title = event.target.value;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
