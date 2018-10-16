@@ -10,6 +10,7 @@
 
   <body>
     <section id="app">
+      <h1 v-once>{{ title }}</h1>
       <p>{{ sayHello() }} - <a target="_blank" :href="link">Google</a></p>
     </section>
 
@@ -22,6 +23,7 @@
         },
         methods: {
           sayHello: function() {
+            this.title = 'Hello!';
             return this.title;
           },
         },
