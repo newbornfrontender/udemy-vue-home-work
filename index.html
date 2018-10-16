@@ -10,11 +10,7 @@
 
   <body>
     <section id="app">
-      <input
-        type="text"
-        v-on:input="changeTitle"
-      >
-      <p>{{ title }}</p>
+      <p>{{ sayHello() }}</p>
     </section>
 
     <script>
@@ -24,8 +20,8 @@
           title: 'Hello World!',
         },
         methods: {
-          changeTitle: function(event) {
-            this.title = event.target.value;
+          sayHello: function() {
+            return 'Hello!';
           },
         },
       });
