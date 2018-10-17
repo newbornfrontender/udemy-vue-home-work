@@ -14,7 +14,7 @@
       <p>{{ counter }}</p>
       <p @mousemove="updateCoordinates">
         Coordinates: {{ x }} / {{ y }}
-        - <span @mousemove="dummy">DEAD SPOT</span>
+        - <span @mousemove.stop="">DEAD SPOT</span>
       </p>
     </section>
 
@@ -33,9 +33,6 @@
           updateCoordinates: function(event) {
             this.x = event.clientX;
             this.y = event.clientY;
-          },
-          dummy: function(event) {
-            event.stopPropagation();
           },
         },
       });
