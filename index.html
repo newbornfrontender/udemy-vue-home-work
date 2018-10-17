@@ -10,7 +10,7 @@
 
   <body>
     <section id="app">
-      <button>Click me</button>
+      <button @click="increment">Click me</button>
       <p>{{ counter }}</p>
     </section>
 
@@ -19,6 +19,12 @@
         el: '#app',
         data: {
           counter: 0,
+        },
+
+        methods: {
+          increment: function() {
+            this.counter++;
+          },
         },
       });
     </script>
