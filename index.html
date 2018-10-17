@@ -16,6 +16,7 @@
         Coordinates: {{ x }} / {{ y }}
         - <span @mousemove.stop="">DEAD SPOT</span>
       </p>
+      <input type="text" @keyup.enter="alertMe">
     </section>
 
     <script>
@@ -33,6 +34,9 @@
           updateCoordinates: function(event) {
             this.x = event.clientX;
             this.y = event.clientY;
+          },
+          alertMe: function(event) {
+            alert(event.target.value);
           },
         },
       });
