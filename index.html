@@ -10,35 +10,15 @@
 
   <body>
     <section id="app">
-      <button @click="increase(2, $event)">Click me</button>
-      <button @click="counter++">Click me</button>
-      <p>{{ counter * 2 > 10 ? 'Greater than 10' : 'Smaller than 10' }}</p>
-      <p @mousemove="updateCoordinates">
-        Coordinates: {{ x }} / {{ y }}
-        - <span @mousemove.stop="">DEAD SPOT</span>
-      </p>
-      <input type="text" @keyup.enter="alertMe">
+      <input type="text">
+      <p>{{ name }}</p>
     </section>
 
     <script>
       new Vue({
         el: '#app',
         data: {
-          counter: 0,
-          x: 0,
-          y: 0,
-        },
-        methods: {
-          increase: function(step, event) {
-            this.counter += step;
-          },
-          updateCoordinates: function(event) {
-            this.x = event.clientX;
-            this.y = event.clientY;
-          },
-          alertMe: function(event) {
-            alert(event.target.value);
-          },
+          name: 'Max',
         },
       });
     </script>
