@@ -12,6 +12,7 @@
     <section id="app">
       <button @click="increase">Click me</button>
       <p>{{ counter }}</p>
+      <p @mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }}</p>
     </section>
 
     <script>
@@ -19,11 +20,16 @@
         el: '#app',
         data: {
           counter: 0,
+          x: 0,
+          y: 0,
         },
-
         methods: {
           increase: function() {
             this.counter++;
+          },
+          updateCoordinates: function(event) {
+            this.x = event.clientX;
+            this.y = event.clientY;
           },
         },
       });
