@@ -13,10 +13,7 @@
       <div
         class="demo"
         @click="attachRed = !attachRed"
-        :class="{
-          red: attachRed,
-          blue: !attachRed,
-        }"
+        :class="divClasses"
       ></div>
       <div class="demo"></div>
       <div class="demo"></div>
@@ -26,6 +23,14 @@
       new Vue({
         data: {
           attachRed: false,
+        },
+        computed: {
+          divClasses() {
+            return {
+              red: this.attachRed,
+              blue: !this.attachRed,
+            };
+          },
         },
       }).$mount('#app');
     </script>
