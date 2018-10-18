@@ -18,7 +18,13 @@
         class="demo"
         :style="myStyle"
       ></div>
-      <div class="demo"></div>
+      <div
+        class="demo"
+        :style="[
+          myStyle,
+          { height: `${width}px` }
+        ]"
+      ></div>
       <hr>
       <input
         type="text"
@@ -40,7 +46,7 @@
           myStyle() {
             return {
               backgroundColor: this.color,
-              width: this.width + 'px',
+              width: `${this.width}px`,
             };
           },
         },
