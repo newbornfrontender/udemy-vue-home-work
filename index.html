@@ -10,22 +10,9 @@
 
   <body>
     <section id="app">
-      <div
-        class="demo"
-        @click="attachRed = !attachRed"
-        :class="divClasses"
-      ></div>
-      <div
-        class="demo"
-        :class="{ red: attachRed }"
-      ></div>
-      <div
-        class="demo"
-        :class="[
-          color,
-          { red: attachRed },
-        ]"
-      ></div>
+      <div class="demo"></div>
+      <div class="demo"></div>
+      <div class="demo"></div>
       <hr>
       <input
         type="text"
@@ -36,13 +23,7 @@
     <script>
       new Vue({
         data: {
-          attachRed: false,
-          color: 'green',
-        },
-        computed: {
-          divClasses() {
-            return this.attachRed ? 'red' : 'blue';
-          },
+          color: 'gray',
         },
       }).$mount('#app');
     </script>
