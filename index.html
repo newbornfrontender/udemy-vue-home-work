@@ -23,7 +23,7 @@
       </div>
 
       <div class="area area-result">
-        <p>{{ doubleIncr ? counter * 2 : counter }}</p>
+        <p>{{ counter }}</p>
       </div>
     </section>
 
@@ -37,7 +37,10 @@
         },
         methods: {
           increment: function(step) {
-            this.counter += step;
+            if (this.doubleIncr) {
+              return this.counter += step * 2;
+            }
+            return this.counter += step;
           },
           decrement: function(step) {
             this.counter -= step;
