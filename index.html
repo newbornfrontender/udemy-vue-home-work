@@ -10,21 +10,23 @@
 
   <body>
     <section id="app">
-      <button @click="changeLink">Click to Change Link</button>
-      <a :href="link">Link</a>
+      <div class="demo"></div>
+      <div class="demo"></div>
+      <div class="demo"></div>
     </section>
 
     <script>
-      new Vue({
-        data: {
-          link: 'https://google.com',
-        },
-        methods: {
-          changeLink() {
-            this.link = 'https://apple.com';
-          },
-        },
-      }).$mount('#app');
+      new Vue({}).$mount('#app');
     </script>
   </body>
 </html>
+
+<style>
+.demo {
+  display: inline-block;
+  margin: 10px;
+  width: 100px;
+  height: 100px;
+  background-color: grey;
+}
+</style>
