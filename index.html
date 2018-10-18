@@ -25,11 +25,21 @@
         },
         computed: {
           output: function() {
+            console.log('Computed');
             return this.secondCounter > 5 ? 'Grearet 5' : 'Smaller 5';
+          },
+        },
+        watch: {
+          counter: function(value) {
+            const vm = this;
+            setTimeout(function() {
+              vm.counter = 0;
+            }, 3000);
           },
         },
         methods: {
           result() {
+            console.log('Method');
             return this.counter > 5 ? 'Grearet 5' : 'Smaller 5';
           },
         },
