@@ -26,10 +26,7 @@
         },
         computed: {
           divClasses() {
-            return {
-              red: this.attachRed,
-              blue: !this.attachRed,
-            };
+            return this.attachRed ? 'red' : 'blue';
           },
         },
       }).$mount('#app');
