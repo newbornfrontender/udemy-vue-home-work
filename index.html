@@ -10,26 +10,20 @@
 
   <body>
     <section id="app">
-      <button @click="increase">Increase</button>
-      <button @click="decrease">Decrease</button>
+      <button @click="counter++">Increase</button>
+      <button @click="counter--">Decrease</button>
       <p>Counter: {{ counter }}</p>
-      <p>Result: {{ result }}</p>
+      <p>Result: {{ result() }}</p>
     </section>
 
     <script>
       new Vue({
         data: {
           counter: 0,
-          result: '',
         },
         methods: {
-          increase: function() {
-            this.counter++;
-            this.result = this.counter > 5 ? 'Greater 5' : 'Smaller 5';
-          },
-          decrease: function() {
-            this.counter--;
-            this.result = this.counter > 5 ? 'Greater 5' : 'Smaller 5';
+          result() {
+            return this.counter > 5 ? 'Grearet 5' : 'Smaller 5';
           },
         },
       }).$mount('#app');
