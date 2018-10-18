@@ -12,14 +12,21 @@
     <section id="app">
       <button @click="counter++">Increase</button>
       <button @click="counter--">Decrease</button>
-      <p>Counter: {{ counter }}</p>
-      <p>Result: {{ result() }}</p>
+      <button @click="secondCounter++">Increase Second</button>
+      <p>Counter: {{ counter }} | {{ secondCounter }}</p>
+      <p>Result: {{ result() }} | {{ output }}</p>
     </section>
 
     <script>
       new Vue({
         data: {
           counter: 0,
+          secondCounter: 0,
+        },
+        computed: {
+          output: function() {
+            return this.secondCounter > 5 ? 'Grearet 5' : 'Smaller 5';
+          },
         },
         methods: {
           result() {
