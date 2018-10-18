@@ -10,61 +10,21 @@
 
   <body>
     <section id="app">
-      <button @click="counter++">Increase</button>
-      <button @click="counter--">Decrease</button>
-      <button @click="secondCounter++">Increase Second</button>
-      <p>Counter: {{ counter }} | {{ secondCounter }}</p>
-      <p>Result: {{ result() }} | {{ output }}</p>
+      <button @click="changeLink">Click to Change Link</button>
+      <a :href="Link">Link</a>
     </section>
 
     <script>
       new Vue({
         data: {
-          counter: 0,
-          secondCounter: 0,
-        },
-        computed: {
-          output: function() {
-            console.log('Computed');
-            return this.secondCounter > 5 ? 'Grearet 5' : 'Smaller 5';
-          },
-        },
-        watch: {
-          counter: function(value) {
-            const vm = this;
-            setTimeout(function() {
-              vm.counter = 0;
-            }, 3000);
-          },
+          link: 'https://google.com',
         },
         methods: {
-          result() {
-            console.log('Method');
-            return this.counter > 5 ? 'Grearet 5' : 'Smaller 5';
+          changeLink() {
+            this.link = 'https://apple.com';
           },
         },
       }).$mount('#app');
     </script>
   </body>
 </html>
-
-<style scoped>
-.area {
-  margin-bottom: 10px;
-  padding: 10px;
-  border-width: 2px;
-  border-style: solid;
-}
-
-.area-increase {
-  border-color: green;
-}
-
-.area-decrease {
-  border-color: red;
-}
-
-.area-result {
-  border-color: blue;
-}
-</style>
