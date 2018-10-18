@@ -21,7 +21,10 @@
       ></div>
       <div
         class="demo"
-        :class="color"
+        :class="[
+          color,
+          { red: attachRed },
+        ]"
       ></div>
       <hr>
       <input
