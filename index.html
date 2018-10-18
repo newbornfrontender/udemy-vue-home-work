@@ -19,13 +19,22 @@
         class="demo"
         :class="{ red: attachRed }"
       ></div>
-      <div class="demo"></div>
+      <div
+        class="demo"
+        :class="color"
+      ></div>
+      <hr>
+      <input
+        type="text"
+        v-model="color"
+      >
     </section>
 
     <script>
       new Vue({
         data: {
           attachRed: false,
+          color: 'green',
         },
         computed: {
           divClasses() {
