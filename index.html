@@ -10,13 +10,21 @@
 
   <body>
     <section id="app">
-      <div class="demo"></div>
+      <div
+        class="demo"
+        @click="attachRed = !attachRed"
+        :class="{ red: attachRed }"
+      ></div>
       <div class="demo"></div>
       <div class="demo"></div>
     </section>
 
     <script>
-      new Vue({}).$mount('#app');
+      new Vue({
+        data: {
+          attachRed: false,
+        },
+      }).$mount('#app');
     </script>
   </body>
 </html>
