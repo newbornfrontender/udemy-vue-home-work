@@ -14,12 +14,19 @@
         class="demo"
         :style="{ backgroundColor: color }"
       ></div>
-      <div class="demo"></div>
+      <div
+        class="demo"
+        :style="myStyle"
+      ></div>
       <div class="demo"></div>
       <hr>
       <input
         type="text"
         v-model="color"
+      >
+      <input
+        type="text"
+        v-model="width"
       >
     </section>
 
@@ -27,8 +34,27 @@
       new Vue({
         data: {
           color: 'gray',
+          width: 100,
+        },
+        computed: {
+          myStyle() {
+            return {
+              backgroundColor: this.color,
+              width: this.width + 'px',
+            };
+          },
         },
       }).$mount('#app');
     </script>
   </body>
 </html>
+
+<style>
+.demo {
+  display: inline-block;
+  margin: 10px;
+  width: 100px;
+  height: 100px;
+  background-color: grey;
+}
+</style>
