@@ -10,40 +10,26 @@
 
   <body>
     <section id="app">
-      <div class="area area-increase">
-        <input type="number" v-model.number="incrStep">
-        <button @click="increment(incrStep)">Increase</button>
-        <input type="checkbox" @click="doubleIncr = !doubleIncr">
-        Double Increase
-      </div>
-
-      <div class="area area-decrease">
-        <input type="number" v-model.number="decrStep">
-        <button @click="decrement(decrStep)">Decrease</button>
-      </div>
-
-      <div class="area area-result">
-        <p>{{ counter }}</p>
-      </div>
+      <button @click="increase">Increase</button>
+      <button @click="decrease">Decrease</button>
+      <p>Counter: {{ counter }}</p>
+      <p>Result: {{ result }}</p>
     </section>
 
     <script>
       new Vue({
         data: {
-          incrStep: 1,
-          decrStep: 1,
-          doubleIncr: false,
           counter: 0,
+          result: '',
         },
         methods: {
-          increment: function(step) {
-            if (this.doubleIncr) {
-              return this.counter += step * 2;
-            }
-            return this.counter += step;
+          increase: function() {
+            this.counter++;
+            this.result = this.counter > 5 ? 'Greater 5' : 'Smaller 5';
           },
-          decrement: function(step) {
-            this.counter -= step;
+          decrease: function() {
+            this.counter--;
+            this.result = this.counter > 5 ? 'Greater 5' : 'Smaller 5';
           },
         },
       }).$mount('#app');
