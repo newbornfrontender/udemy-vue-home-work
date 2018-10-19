@@ -10,8 +10,9 @@
 
   <body>
     <section id="app">
-      <p>You can see me!</p>
+      <p v-if="show">You can see me!</p>
       <p>Do you also see me?</p>
+      <button @click="show = !show">Switcher</button>
     </section>
 
     <script>
@@ -23,13 +24,3 @@
     </script>
   </body>
 </html>
-
-<style>
-.demo {
-  display: inline-block;
-  margin: 10px;
-  width: 100px;
-  height: 100px;
-  background-color: grey;
-}
-</style>
