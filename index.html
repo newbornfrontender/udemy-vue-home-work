@@ -10,45 +10,14 @@
 
   <body>
     <section id="app">
-      <div
-        class="demo"
-        :style="{ backgroundColor: color }"
-      ></div>
-      <div
-        class="demo"
-        :style="myStyle"
-      ></div>
-      <div
-        class="demo"
-        :style="[
-          myStyle,
-          { height: `${width}px` }
-        ]"
-      ></div>
-      <hr>
-      <input
-        type="text"
-        v-model="color"
-      >
-      <input
-        type="text"
-        v-model="width"
-      >
+      <p>You can see me!</p>
+      <p>Do you also see me?</p>
     </section>
 
     <script>
       new Vue({
         data: {
-          color: 'gray',
-          width: 100,
-        },
-        computed: {
-          myStyle() {
-            return {
-              backgroundColor: this.color,
-              width: `${this.width}px`,
-            };
-          },
+          show: true,
         },
       }).$mount('#app');
     </script>
