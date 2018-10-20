@@ -11,7 +11,9 @@
   <body>
     <section id="app">
       <ul>
-        <li v-for="ingredient of ingredients">{{ ingredient }}</li>
+        <li v-for="(ingredient, index) of ingredients">
+          {{ ingredient }} ({{ index }})
+        </li>
       </ul>
     </section>
 
