@@ -9,21 +9,21 @@
   </head>
 
   <body>
-    <section id="app">
-      <p v-if="show">You can see me!</p>
-      <p v-else>Now you see me!</p>
-      <template v-if="show">
-        <h1>Heading</h1>
-        <p>Inside a template</p>
-      </template>
-      <p v-show="show">Do you also see me?</p>
-      <button @click="show = !show">Switcher</button>
-    </section>
+    <section id="app"></section>
 
     <script>
       new Vue({
         data: {
-          show: true,
+          ingredients: ['meat', 'fruit', 'cookies'],
+          persons: [{
+            name: 'Max',
+            age: 27,
+            color: 'red',
+          }, {
+            name: 'Anna',
+            age: 'unknown',
+            color: 'blue',
+          }],
         },
       }).$mount('#app');
     </script>
