@@ -11,10 +11,15 @@
   <body>
     <section id="app">
       <ul>
-        <li v-for="(ingredient, i) of ingredients">
+        <li
+          v-for="(ingredient, i) of ingredients"
+          :key="ingredient"
+        >
           {{ ingredient }} ({{ i + 1 }})
         </li>
       </ul>
+
+      <button @click="ingredients.push('spices')">Add new</button>
 
       <hr>
 
