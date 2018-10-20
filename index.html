@@ -15,6 +15,11 @@
           {{ ingredient }} ({{ i + 1 }})
         </li>
       </ul>
+
+      <template v-for="(ingredient, index) of ingredients">
+        <h1>{{ ingredient }}</h1>
+        <p>{{ index }}</p>
+      </template>
     </section>
 
     <script>
