@@ -9,7 +9,11 @@
   </head>
 
   <body>
-    <section id="app"></section>
+    <section id="app">
+      <ul>
+        <li v-for="ingredient of ingredients">{{ ingredient }}</li>
+      </ul>
+    </section>
 
     <script>
       new Vue({
