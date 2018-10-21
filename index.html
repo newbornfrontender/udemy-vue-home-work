@@ -4,58 +4,48 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Vue</title>
+    <title>Monster Slayer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
+    <link rel="stylesheet" href="css/app.css">
     <script src="https://unpkg.com/vue@latest/dist/vue.js"></script>
   </head>
 
   <body>
-    <section id="app">
-      <ul>
-        <li
-          v-for="(ingredient, i) of ingredients"
-          :key="ingredient"
-        >
-          {{ ingredient }} ({{ i + 1 }})
-        </li>
-      </ul>
-
-      <button @click="ingredients.push('spices')">Add new</button>
-
-      <hr>
-
-      <ul>
-        <li v-for="person of persons">
-          <div v-for="(value, key, index) of person">
-            {{ key }} : {{ value }} ({{ index }})
+    <div id="app">
+      <section class="row">
+        <div class="small-6 columns">
+          <h1 class="text-center">YOU</h1>
+          <div class="healthbar">
+            <div class="healthbar text-center" style="background-color: green; margin: 0; color: white;"></div>
           </div>
-        </li>
-      </ul>
-
-      <span v-for="n of 10">{{ n }}</span>
-
-      <hr>
-
-      <template v-for="(ingredient, index) of ingredients">
-        <h1>{{ ingredient }}</h1>
-        <p>{{ index }}</p>
-      </template>
-    </section>
-
-    <script>
-      new Vue({
-        data: {
-          ingredients: ['meat', 'fruit', 'cookies'],
-          persons: [{
-            name: 'Max',
-            age: 27,
-            color: 'red',
-          }, {
-            name: 'Anna',
-            age: 'unknown',
-            color: 'blue',
-          }],
-        },
-      }).$mount('#app');
-    </script>
+        </div>
+        <div class="small-6 columns">
+          <h1 class="text-center">MONSTER</h1>
+          <div class="healthbar">
+            <div class="healthbar text-center" style="background-color: green; margin: 0; color: white;"></div>
+          </div>
+        </div>
+      </section>
+      <section class="row controls">
+        <div class="small-12 columns">
+          <button id="start-game">START NEW GAME</button>
+        </div>
+      </section>
+      <section class="row controls">
+        <div class="small-12 columns">
+          <button id="attack">ATTACK</button>
+          <button id="special-attack">SPECIAL ATTACK</button>
+          <button id="heal">HEAL</button>
+          <button id="give-up">GIVE UP</button>
+        </div>
+      </section>
+      <section class="row log">
+        <div class="small-12 columns">
+          <ul>
+            <li></li>
+          </ul>
+        </div>
+      </section>
+    </div>
   </body>
 </html>
