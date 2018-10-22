@@ -3,10 +3,6 @@ let data = {
   showParagraph: false,
 };
 
-Vue.component('hello', {
-  template: '<h1>Hello!</h1>',
-});
-
 const vm1 = new Vue({
   data: data,
   methods: {
