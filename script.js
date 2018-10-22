@@ -24,8 +24,12 @@ const vm1 = new Vue({
   },
 }).$mount('#app1');
 
+vm1.newProp = 'New!';
+console.log(vm1);
+
 setTimeout(() => {
   vm1.title = 'Changed by timer';
+  vm1.show();
 }, 3000);
 
 const vm2 = new Vue({
