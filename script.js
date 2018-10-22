@@ -22,4 +22,10 @@ new Vue({
       alert(`Title changed, new value: ${value}`);
     },
   },
-}).$mount('#app');
+}).$mount('#app1');
+
+new Vue({
+  data: {
+    title: 'The second Instance',
+  },
+}).$mount('#app2');
