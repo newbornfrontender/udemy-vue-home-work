@@ -1,4 +1,4 @@
-new Vue({
+const vm1 = new Vue({
   data: {
     title: 'The VueJS Instance',
     showParagraph: false,
@@ -24,8 +24,17 @@ new Vue({
   },
 }).$mount('#app1');
 
-new Vue({
+setTimeout(() => {
+  vm1.title = 'Changed by timer';
+}, 3000);
+
+const vm2 = new Vue({
   data: {
     title: 'The second Instance',
+  },
+  methods: {
+    onChange() {
+      vm1.title = 'Changed!';
+    },
   },
 }).$mount('#app2');
