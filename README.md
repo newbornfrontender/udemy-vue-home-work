@@ -12,5 +12,5 @@
 6. Лекция 77 - An Overview over the Webpack Template Folder Structure (✓)
 7. Лекция 78 - Understanding ".vue" Files (✓)
 8. Лекция 79 - Understanding the Object in the Vue File (✓)
-9. Лекция 80 - How to Build your App for Production (...)
+9. Лекция 80 - How to Build your App for Production (✓)
 10. Лекция 81 - Module Wrap Up (...)
