@@ -1,14 +1,5 @@
 module.exports = {
-  lintOnSave: process.env.NODE_ENV !== 'production',
-  baseUrl: undefined,
-  outputDir: undefined,
-  assetsDir: undefined,
-  runtimeCompiler: undefined,
-  productionSourceMap: undefined,
-  parallel: undefined,
-  css: {
-    sourceMap: false // true
-  },
+  lintOnSave: false,
   devServer: {
     overlay: {
       warnings: true,
